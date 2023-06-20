@@ -1,0 +1,5 @@
+
+Prediction ratio for the date Tue Jun 20 16:53:35 2023 for Ones % 59.75 and Zeroes % 40.25
+Prediction ratio for the date Tue Jun 20 16:53:45 2023 for Ones % 59.75 and Zeroes % 40.25
+Prediction ratio for the date Tue Jun 20 17:05:01 2023 for Ones % 52.3 and Zeroes % 47.7
+Prediction ratio for the date Tue Jun 20 17:05:04 2023 for Ones % 52.3 and Zeroes % 47.7
