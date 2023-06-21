@@ -47,6 +47,8 @@ Created Airflow DAGS and used MLFlow UI to automate and monitor data engineering
 #### Recommendation
 
 ##### LightGBM Model with AUC score - 0.82
+* Training prediction ratio for Ones **59.75**% and Zeroes **40.25**%
+* Inference prediction ratio for Ones **52.3**% and Zeroes **47.7**%
 
 ###### Top 10 predictor variables
 'total_leads_droppped', 'city_tier', 'referred_lead_0.0', 'first_platform_c_Level0', 'first_platform_c_Level1', 'first_platform_c_Level2', 'first_platform_c_Level3', 'first_platform_c_Level7', 'first_platform_c_Level8', 'first_platform_c_others'
