@@ -7,6 +7,7 @@ CSV_FILE = f"{DATA_DIRECTORY}leadscoring_test.csv"
 #CSV_FILE = f"{DATA_DIRECTORY}leadscoring_inference.csv"
 INTERACTION_MAPPING = f"{DATA_DIRECTORY}interaction_mapping.csv"
 INDEX_COLUMNS = ['created_date', 'first_platform_c', 'first_utm_medium_c', 'first_utm_source_c', 'total_leads_droppped', 'city_tier', 'referred_lead', 'app_complete_flag']
+#**************** NOT REQUIRED. Using common list and storing required features as per need.
 #INDEX_COLUMNS_TRAINING = []
 #INDEX_COLUMNS_INFERENCE = []
 #NOT_FEATURES = []
