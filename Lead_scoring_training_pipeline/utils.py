@@ -82,14 +82,14 @@ def encode_features():
 
         # To prevent dimension mismatch during inference
         encoded_df = pd.DataFrame(columns= ONE_HOT_ENCODED_FEATURES) # from constants.py
-        placeholder_df = pd.DataFrame()
+        combine_df = pd.DataFrame()
 
         # One-Hot Encoding using get_dummies for the specified categorical features
         for f in FEATURES_TO_ENCODE:
             if(f in df.columns):
                 encoded = pd.get_dummies(df[f])
                 encoded = encoded.add_prefix(f + '_')
-                placeholder_df = pd.concat([placeholder_df, encoded], axis=1)
+                combine_df = pd.concat([combine_df, encoded], axis=1)
             else:
                 print(f + ',Feature not found')
                 #return df
@@ -98,8 +98,8 @@ def encode_features():
         for feature in encoded_df.columns:
             if feature in df.columns:
                 encoded_df[feature] = df[feature]
-            if feature in placeholder_df.columns:
-                encoded_df[feature] = placeholder_df[feature]
+            if feature in combine_df.columns:
+                encoded_df[feature] = combine_df[feature]
 
         encoded_df.fillna(0, inplace=True)
         target = df[['app_complete_flag']]
@@ -172,6 +172,8 @@ def get_trained_model():
             clf.fit(X_train, y_train)
 
             mlflow.sklearn.log_model(sk_model=clf,artifact_path="models", registered_model_name='LightGBM')
+            #artifact_path="sqlite:///" + MLFLOW_PATH + DB_FILE_MLFLOW
+            #mlflow.log_artifacts(clf, artifact_path=artifact_path)
             mlflow.log_params(model_config)    
 
             # Predict the results on training dataset
